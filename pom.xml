@@ -18,6 +18,13 @@
     <build>
         <pluginManagement>
             <plugins>
+                <!--
+                  maven-compiler-plugin 3.13.0 is pinned deliberately.
+                  The installed Maven is 3.8.4 (< 3.9.0), but 3.13.0 is required to
+                  support <release>25</release>; older versions (e.g. 3.0.5) cannot
+                  target Java 25. Verified working: `mvn -o clean install` succeeds
+                  with Maven 3.8.4 + JDK 25 (javac [debug release 25]).
+                -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
